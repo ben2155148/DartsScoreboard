@@ -1,9 +1,6 @@
-from tkinter import *
+from tkinter import * 
 
-root = Tk()
-
-# Keeps track of whose turn it is (p1 = 0, p2 = 1)
-turn = 0
+root = Tk() 
 
 p1 = Label(root, text="Player 1", font=(25)) 
 p2 = Label(root, text="Player 2", font=(25))
@@ -11,43 +8,41 @@ p1ScoreLabel = Label(root, text=301, font=(25))
 p2ScoreLabel = Label(root, text=301, font=(25))
 
 p1Score = 301
-p2Score = 301
+p2Score = 301 
 
-def calculateScore(segmentValue, turn):
-    if turn == 0:
-        newScore = Label(root, text=str(p1Score-segmentValue))
-        #TODO: enter adding to scrollable window frame for all score
-    elif turn == 1:
-        newScore = Label(root, text=str(p2Score-segmentValue))
-        #TODO: enter adding to scrollable window frame for all score
+# function for calculating player's dart score
+def calculateScore(segmentValue):
+    print("hello world")
 
-# Create buttons for dartboard segments 
+# Create buttons for dartboard segments
 
 d = Button(text="double")
 t = Button(text="triple")
 
-s1 = Button(text="1", command=lambda: calculateScore(1, turn))
-s2 = Button(text="2")
-s3 = Button(text="3")
-s4 = Button(text="4")
-s5 = Button(text="5")
-s6 = Button(text="6")
-s7 = Button(text="7")
-s8 = Button(text="8")
-s9 = Button(text="9")
-s10 = Button(text="10")
-s11 = Button(text="11")
-s12 = Button(text="12")
-s13 = Button(text="13")
-s14 = Button(text="14")
-s15 = Button(text="15")
-s16 = Button(text="16")
-s17 = Button(text="17")
-s18 = Button(text="18")
-s19 = Button(text="19")
-s20 = Button(text="20")
-s25 = Button(text="25 Ring")
-bullseye = Button(text="Bullseye") 
+s1 = Button(text="1", command=lambda: calculateScore(1))
+s2 = Button(text="2", command=lambda: calculateScore(2))
+s3 = Button(text="3", command=lambda: calculateScore(3))
+s4 = Button(text="4", command=lambda: calculateScore(4))
+s5 = Button(text="5", command=lambda: calculateScore(5))
+s6 = Button(text="6", command=lambda: calculateScore(6))
+s7 = Button(text="7", command=lambda: calculateScore(7))
+s8 = Button(text="8", command=lambda: calculateScore(8))
+s9 = Button(text="9", command=lambda: calculateScore(9))
+s10 = Button(text="10", command=lambda: calculateScore(10))
+s11 = Button(text="11", command=lambda: calculateScore(11))
+s12 = Button(text="12", command=lambda: calculateScore(12))
+s13 = Button(text="13", command=lambda: calculateScore(13))
+s14 = Button(text="14", command=lambda: calculateScore(14))
+s15 = Button(text="15", command=lambda: calculateScore(15))
+s16 = Button(text="16", command=lambda: calculateScore(16))
+s17 = Button(text="17", command=lambda: calculateScore(17))
+s18 = Button(text="18", command=lambda: calculateScore(18))
+s19 = Button(text="19", command=lambda: calculateScore(19))
+s20 = Button(text="20", command=lambda: calculateScore(20))
+s25 = Button(text="25 Ring", command=lambda: calculateScore(25))
+bullseye = Button(text="Bullseye", command=lambda: calculateScore(50)) 
+
+# Organizing Labels, Buttons, and Frames on root using grid()
 
 p1.grid(row=0, column=4)
 p2.grid(row=0, column=5) 
