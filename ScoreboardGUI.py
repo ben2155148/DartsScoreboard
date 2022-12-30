@@ -1,20 +1,32 @@
 from tkinter import *
 
-root = Tk()  
+root = Tk()
 
-header = Label(root, text="Track your darts!")
+# Keeps track of whose turn it is (p1 = 0, p2 = 1)
+turn = 0
 
-p1 = Label(root, text="Player 1", font=(25))
+p1 = Label(root, text="Player 1", font=(25)) 
 p2 = Label(root, text="Player 2", font=(25))
-p1Score = Label(root, text="[Score]", font=(25))
-p2Score = Label(root, text="[Score]", font=(25))
+p1ScoreLabel = Label(root, text=301, font=(25))
+p2ScoreLabel = Label(root, text=301, font=(25))
+
+p1Score = 301
+p2Score = 301
+
+def calculateScore(segmentValue, turn):
+    if turn == 0:
+        newScore = Label(root, text=str(p1Score-segmentValue))
+        #TODO: enter adding to scrollable window frame for all score
+    elif turn == 1:
+        newScore = Label(root, text=str(p2Score-segmentValue))
+        #TODO: enter adding to scrollable window frame for all score
 
 # Create buttons for dartboard segments 
 
 d = Button(text="double")
 t = Button(text="triple")
 
-s1 = Button(text="1 ")
+s1 = Button(text="1", command=lambda: calculateScore(1, turn))
 s2 = Button(text="2")
 s3 = Button(text="3")
 s4 = Button(text="4")
@@ -34,46 +46,44 @@ s17 = Button(text="17")
 s18 = Button(text="18")
 s19 = Button(text="19")
 s20 = Button(text="20")
-s25 = Button(text="25 ring")
-bullseye = Button(text="Bullseye")
+s25 = Button(text="25 Ring")
+bullseye = Button(text="Bullseye") 
 
-header.grid(row=0, column=1)
+p1.grid(row=0, column=4)
+p2.grid(row=0, column=5) 
 
-p1.grid(row=0, column=4, padx=50)
-p2.grid(row=0, column=5, padx=50) 
+d.grid(row=1, column=1)
+t.grid(row=1,column=2)
 
-d.grid(row=1, column=1, padx=5, pady=5)
-t.grid(row=1,column=2,padx=5, pady=5)
+p1ScoreLabel.grid(row=1, column=4)
+p2ScoreLabel.grid(row=1, column=5)
 
-p1Score.grid(row=1, column=4, padx=50, pady=5)
-p2Score.grid(row=1, column=5, padx=50, pady=5)
+s1.grid(row=2, column=0)
+s2.grid(row=2, column=1)
+s3.grid(row=2,column=2)
+s4.grid(row=2,column=3)
 
-s1.grid(row=2, column=0, padx=5, pady=5)
-s2.grid(row=2, column=1, padx=5, pady=5)
-s3.grid(row=2,column=2, padx=5, pady=5)
-s4.grid(row=2,column=3, padx=5, pady=5)
+s5.grid(row=3, column=0)
+s6.grid(row=3, column=1)
+s7.grid(row=3,column=2)
+s8.grid(row=3,column=3)
 
-s5.grid(row=3, column=0, padx=5, pady=5)
-s6.grid(row=3, column=1, padx=5, pady=5)
-s7.grid(row=3,column=2, padx=5, pady=5)
-s8.grid(row=3,column=3, padx=5, pady=5)
+s9.grid(row=4, column=0)
+s10.grid(row=4, column=1)
+s11.grid(row=4,column=2)
+s12.grid(row=4,column=3)
 
-s9.grid(row=4, column=0, padx=5, pady=5)
-s10.grid(row=4, column=1, padx=5, pady=5)
-s11.grid(row=4,column=2, padx=5, pady=5)
-s12.grid(row=4,column=3, padx=5, pady=5)
+s13.grid(row=5, column=0)
+s14.grid(row=5, column=1)
+s15.grid(row=5,column=2)
+s16.grid(row=5,column=3)
 
-s13.grid(row=5, column=0, padx=5, pady=5)
-s14.grid(row=5, column=1, padx=5, pady=5)
-s15.grid(row=5,column=2, padx=5, pady=5)
-s16.grid(row=5,column=3, padx=5, pady=5)
+s17.grid(row=6, column=0)
+s18.grid(row=6, column=1)
+s19.grid(row=6,column=2)
+s20.grid(row=6,column=3)
 
-s17.grid(row=6, column=0, padx=5, pady=5)
-s18.grid(row=6, column=1, padx=5, pady=5)
-s19.grid(row=6,column=2, padx=5, pady=5)
-s20.grid(row=6,column=3, padx=5, pady=5)
-
-s25.grid(row=7, column=1, pady=5)
-bullseye.grid(row=7, column=2, pady=5)
+s25.grid(row=7, column=1)
+bullseye.grid(row=7, column=2)
 
 root.mainloop()
